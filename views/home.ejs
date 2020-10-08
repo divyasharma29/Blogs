@@ -1,0 +1,16 @@
+<%- (include("partials/header")) -%>
+<div class="item">
+    <h1>Home</h1>
+    <p><%=homeContent%></p>
+    <!-- <% for(var i = 0 ; i<listPost.length;i++){%>
+        <h1><%=  listPost[i].title  %></h1>
+        <p><%=listPost[i].data%></p>
+    <%}%> -->
+
+    <%listPost.forEach(function(post){%>
+        <h1><%=post.title%></h1>
+        <p><%=post.content.substring(1,300)%>
+        <a href="/posts/<%= post._id %>">Read More</a></p>
+    <%});%>
+</div>
+<%- (include("partials/footer")) -%>
